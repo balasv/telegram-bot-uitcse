@@ -70,9 +70,10 @@ var getmarks = function (message) {
     var req = unirest("GET", requrl);
     console.log(2);
     req.headers({
+        "authorization": "Basic ZjMwMzRlMzctYTA5OC00NDQ4LTgxNWUtOTRhODBkN2MxOWQzOjZiODhmZTBlLWMzNTYtNDkwNC1hZmRmLWM3NmFkNTdkOWU5Ng==",
         "content-type": "application/json",
         "accept": "application/json",
-        "host": "csemarks.apispark.net"
+        "host": "svmarks.apispark.net"
     });
 
     req.end(function (res) {
