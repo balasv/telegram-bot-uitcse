@@ -24,7 +24,7 @@ console.log('Express server listening on port ' + app.get('port'));
     
 var unirest = require('unirest');
 var stringTable = require('string-table');
-var BASE_URL = "https://api.telegram.org/bot89371812:AAETQopU8HPS2kYKxSmnreRS7tyQatjrPkQ/getmarks";
+var BASE_URL = "https://api.telegram.org/bot89371812:AAETQopU8HPS2kYKxSmnreRS7tyQatjrPkQ/;
 var POLLING_URL = BASE_URL + "getUpdates?offset=:offset:&timeout=60";
 var SEND_MESSAGE_URL = BASE_URL + "sendMessage";
 var max_offset = 0;
