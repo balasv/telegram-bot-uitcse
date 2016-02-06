@@ -65,7 +65,7 @@ var getmarks = function (message) {
      chat_id : message.chat.id,
      text : "You told be to do something, so I took your input and made it all caps. Look: " + caps
      };*/
-    var requrl = 'https://csemarks.apispark.net/v1/' + arg[1] + '/?Reg_No=' + arg[2];
+    var requrl = 'https://svmarks.apispark.net/v1' + arg[1] + '/?USN=' + arg[2];
     console.log(requrl);
     var req = unirest("GET", requrl);
     console.log(2);
@@ -81,14 +81,14 @@ var getmarks = function (message) {
 
         //var totg = stringTable.create(res.body, {headers: ['Name', 'EEFA', 'CG', 'MPC', 'DSP', 'DWM', 'WN']});
         var totg = "";
-        totg = totg + stringTable.create(res.body, {headers: ['Name']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Reg_No']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['EEFA']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['CG']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['DWM']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['MPC']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['DSP']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['WN']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['NAME_OF_THE_STUDENT']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['USN']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['10IS51']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['10CS54']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['10CS56']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['10CS52']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['10CS55']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['10CS53']}) + "\n\n";
 
         console.log(totg);
         var answer = {
