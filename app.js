@@ -24,7 +24,7 @@ console.log('Express server listening on port ' + app.get('port'));
     
 var unirest = require('unirest');
 var stringTable = require('string-table');
-var BASE_URL = "https://api.telegram.org/bot185602892:AAGXEyMR9_UteyIvobwOWywTT9FdZxCn8C0/";
+var BASE_URL = "https://api.telegram.org/bot89371812:AAGawhl9qP5nOO9B6OcI-9_l9mYxj4WZfCM/";
 var POLLING_URL = BASE_URL + "getUpdates?offset=:offset:&timeout=60";
 var SEND_MESSAGE_URL = BASE_URL + "sendMessage";
 var max_offset = 0;
@@ -65,15 +65,16 @@ var getmarks = function (message) {
      chat_id : message.chat.id,
      text : "You told be to do something, so I took your input and made it all caps. Look: " + caps
      };*/
-    var requrl = 'https://svmarks.apispark.net/v1/' + arg[1] + '/?USN=' + arg[2];
+    var requrl = 'https://balabot.apispark.net/v1/' + arg[1] + '/?USN=' + arg[2];
     console.log(requrl);
     var req = unirest("GET", requrl);
     console.log(2);
     req.headers({
-        "authorization": "Basic ZjMwMzRlMzctYTA5OC00NDQ4LTgxNWUtOTRhODBkN2MxOWQzOjZiODhmZTBlLWMzNTYtNDkwNC1hZmRmLWM3NmFkNTdkOWU5Ng==",
-        "content-type": "application/json",
-        "accept": "application/json",
-        "host": "svmarks.apispark.net"
+          "authorization": "Basic NTgwYzdiNDUtYjYxNS00NTU2LTk1ODgtZGIwNjM0NGM3OGIxOmZiMjEwMmNiLTkyODEtNGYwZi1hOTU5LWM5NmQzYTg4ZTBjMA==",
+  "content-type": "application/json",
+  "accept": "application/json",
+  "host": "balabot.apispark.net"
+
     });
 
     req.end(function (res) {
@@ -84,12 +85,12 @@ var getmarks = function (message) {
         var totg = "";
         totg = totg + stringTable.create(res.body, {headers: ['NAME_OF_THE_STUDENT']}) + "\n\n";
         totg = totg + stringTable.create(res.body, {headers: ['USN']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['10IS51']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['10CS54']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['10CS56']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['10CS52']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['10CS55']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['10CS53']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['Subject1']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['Subject2']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['Subject3']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['Subject4']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['Subject5']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['Subject6']}) + "\n\n";
 
         console.log(totg);
         var answer = {
