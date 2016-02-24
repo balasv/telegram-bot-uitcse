@@ -77,16 +77,18 @@ var gethallno = function (message) {
     });
 
     req.end(function (res) {
-        if (res.error)
-            throw new Error(res.error);
-
-        //var totg = stringTable.create(res.body, {headers: ['Name', 'EEFA', 'CG', 'MPC', 'DSP', 'DWM', 'WN']});
         var totg = "";
+        if (res.error){
+            //throw new Error(res.error);
+            totg="Check Your Number otherwise Data Not found. Contact Your Class Advisor"
+        }
+        //var totg = stringTable.create(res.body, {headers: ['Name', 'EEFA', 'CG', 'MPC', 'DSP', 'DWM', 'WN']});
+        else{
         totg = totg + stringTable.create(res.body, {headers: ['Student_Name']}) + "\n\n";
         totg = totg + stringTable.create(res.body, {headers: ['USN']}) + "\n\n";
         totg = totg + stringTable.create(res.body, {headers: ['Test_']}) + "\n\n";
         totg = totg + stringTable.create(res.body, {headers: ['HallNo']}) + "\n\n";
-        
+        }
 
         console.log(totg);
         var answer = {
