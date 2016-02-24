@@ -82,14 +82,11 @@ var gethallno = function (message) {
 
         //var totg = stringTable.create(res.body, {headers: ['Name', 'EEFA', 'CG', 'MPC', 'DSP', 'DWM', 'WN']});
         var totg = "";
-        totg = totg + stringTable.create(res.body, {headers: ['NAME_OF_THE_STUDENT']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['Student_Name']}) + "\n\n";
         totg = totg + stringTable.create(res.body, {headers: ['USN']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject1']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject2']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject3']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject4']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject5']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject6']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['Test_']}) + "\n\n";
+        totg = totg + stringTable.create(res.body, {headers: ['HallNo']}) + "\n\n";
+        
 
         console.log(totg);
         var answer = {
