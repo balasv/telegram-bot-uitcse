@@ -160,7 +160,6 @@ var getmarks = function (message) {
 
 var COMMANDS = {
     "getmarks": getmarks,
-
     "gethallno": gethallno
 };
 
