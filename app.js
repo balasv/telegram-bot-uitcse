@@ -210,7 +210,7 @@ var getattd = function (message) {
 
 var COMMANDS = {
     "getmarks": getmarks,
-    "getattd":getattd,
+    "getattd": getattd,
     "gethallno": gethallno
 };
 
