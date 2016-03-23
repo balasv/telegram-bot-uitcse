@@ -156,62 +156,8 @@ var getmarks = function (message) {
 
 }
 
-var getattd = function (message) {
-  //  console.log("function message");
-    var arg = message.text.split(" ");
- //   console.log(arg);
-
-    /*var caps = message.text.toUpperCase();
-     var answer = {
-     chat_id : message.chat.id,
-     text : "You told be to do something, so I took your input and made it all caps. Look: " + caps
-     };*/
-    var requrl = 'https://balabot.apispark.net/v1/' + arg[1] + '/?USN=' + arg[2];
-  //  console.log(requrl);
-    var req = unirest("GET", requrl);
- //   console.log(2);
-    req.headers({
-          "authorization": "Basic NTgwYzdiNDUtYjYxNS00NTU2LTk1ODgtZGIwNjM0NGM3OGIxOmZiMjEwMmNiLTkyODEtNGYwZi1hOTU5LWM5NmQzYTg4ZTBjMA==",
-  "content-type": "application/json",
-  "accept": "application/json",
-  "host": "balabot.apispark.net"
-
-    });
-
-    req.end(function (res) {
-        if (res.error)
-            throw new Error(res.error);
-
-        //var totg = stringTable.create(res.body, {headers: ['Name', 'EEFA', 'CG', 'MPC', 'DSP', 'DWM', 'WN']});
-        var totg = "";
-        totg = totg + stringTable.create(res.body, {headers: ['NAME_OF_THE_STUDENT']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['USN']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject1']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject2']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject3']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject4']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject5']}) + "\n\n";
-        totg = totg + stringTable.create(res.body, {headers: ['Subject6']}) + "\n\n";
-
-        console.log(totg);
-        var answer = {
-            chat_id: message.chat.id,
-            text: totg
-        };
-        unirest.post(SEND_MESSAGE_URL)
-                .send(answer)
-                .end(function (response) {
-                    if (response.status == 200)
-                        console.log("Successfully sent message to " + message.chat.id);
-                });
-    });
-
-}
-
-
 var COMMANDS = {
     "getmarks": getmarks,
-    "getattd": getattd
     "gethallno": gethallno
 };
 
