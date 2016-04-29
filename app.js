@@ -28,10 +28,10 @@ var BASE_URL = "https://api.telegram.org/bot89371812:AAE1BKNJD-avb8Q82aIf99Iq2GC
 var POLLING_URL = BASE_URL + "getUpdates?offset=:offset:&timeout=60";
 var SEND_MESSAGE_URL = BASE_URL + "sendMessage";
 var max_offset = 0;
-//console.log("ddd");
+console.log("ddd");
 poll(max_offset);
 function poll(offset) {
-  //  console.log("offset");
+   console.log("offset");
     var url = POLLING_URL.replace(":offset:", offset);
 
     unirest.get(url)
@@ -55,9 +55,9 @@ function poll(offset) {
 };
 
 var gethallno = function (message) {
-  //  console.log("function message");
+   console.log("function message");
     var arg = message.text.split(" ");
-  //  console.log(arg);
+   console.log(arg);
 
     /*var caps = message.text.toUpperCase();
      var answer = {
@@ -65,9 +65,9 @@ var gethallno = function (message) {
      text : "You told be to do something, so I took your input and made it all caps. Look: " + caps
      };*/
     var requrl = 'https://balabot.apispark.net/v1/' + arg[1] + '/?USN=' + arg[2];
- //   console.log(requrl);
+   console.log(requrl);
     var req = unirest("GET", requrl);
-//    console.log(2);
+   console.log(2);
     req.headers({
           "authorization": "Basic NTgwYzdiNDUtYjYxNS00NTU2LTk1ODgtZGIwNjM0NGM3OGIxOmZiMjEwMmNiLTkyODEtNGYwZi1hOTU5LWM5NmQzYTg4ZTBjMA==",
   "content-type": "application/json",
@@ -105,9 +105,9 @@ var gethallno = function (message) {
 
 }
 var getmarks = function (message) {
-  //  console.log("function message");
+   console.log("function message getmarks");
     var arg = message.text.split(" ");
- //   console.log(arg);
+    console.log(arg);
 
     /*var caps = message.text.toUpperCase();
      var answer = {
@@ -115,9 +115,9 @@ var getmarks = function (message) {
      text : "You told be to do something, so I took your input and made it all caps. Look: " + caps
      };*/
     var requrl = 'https://balabot.apispark.net/v1/' + arg[1] + '/?USN=' + arg[2];
-  //  console.log(requrl);
+   console.log(requrl);
     var req = unirest("GET", requrl);
- //   console.log(2);
+    console.log(2);
     req.headers({
           "authorization": "Basic NTgwYzdiNDUtYjYxNS00NTU2LTk1ODgtZGIwNjM0NGM3OGIxOmZiMjEwMmNiLTkyODEtNGYwZi1hOTU5LWM5NmQzYTg4ZTBjMA==",
   "content-type": "application/json",
@@ -157,9 +157,9 @@ var getmarks = function (message) {
 }
 
 var getattd = function (message) {
-  //  console.log("function message");
+    console.log("function message");
     var arg = message.text.split(" ");
- //   console.log(arg);
+    console.log(arg);
 
     /*var caps = message.text.toUpperCase();
      var answer = {
@@ -167,9 +167,9 @@ var getattd = function (message) {
      text : "You told be to do something, so I took your input and made it all caps. Look: " + caps
      };*/
     var requrl = 'https://balabot.apispark.net/v1/' + arg[1] + '/?USN=' + arg[2];
-  //  console.log(requrl);
+   console.log(requrl);
     var req = unirest("GET", requrl);
- //   console.log(2);
+    console.log(2);
     req.headers({
           "authorization": "Basic NTgwYzdiNDUtYjYxNS00NTU2LTk1ODgtZGIwNjM0NGM3OGIxOmZiMjEwMmNiLTkyODEtNGYwZi1hOTU5LWM5NmQzYTg4ZTBjMA==",
   "content-type": "application/json",
@@ -216,7 +216,7 @@ var COMMANDS = {
 
 function runCommand(message) {
     var msgtext = message.text;
- //   console.log("run message");
+    console.log("run message");
     if (msgtext.indexOf("/") != 0)
         return false; // no slash at beginning?
     var command = msgtext.substring(1, msgtext.indexOf(" "));
